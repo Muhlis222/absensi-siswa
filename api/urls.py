@@ -1,6 +1,7 @@
+
 from django.urls import path
-from . import views
+from api.views import SiswaList
 
 urlpatterns = [
-    path('', views.members, name='members'),
+    path('siswa/', SiswaList.as_view()),
 ]
