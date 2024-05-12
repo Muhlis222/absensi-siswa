@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'absensi_siswa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'absensi',
+        'NAME': 'absensii',
         'USER': 'root',
         'PASSWORD': 'Muhlis1k',
         'HOST': '127.0.0.1',

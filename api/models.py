@@ -1,10 +1,16 @@
 from django.db import models
 
+Kelas_Choices = (
+    ('A', 'Kelas A'),
+    ('B', 'Kelas B'),
+    ('C', 'Kelas C'),
+    ('D', 'Kelas D'),
+)
 # Create your models here.
 class Siswa(models.Model):
     nama = models.CharField(max_length=255)
     npm = models.IntegerField(unique=True)
-    kelas = models.CharField(max_length=255)
+    kelas = models.CharField(max_length=255, choices=Kelas_Choices)
     def __str__(self):
         return self.nama
 
@@ -21,7 +27,7 @@ class Absensi(models.Model):
     hadir = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.siswa     
+        return self.siswa
 
 class JadwalPelajaran(models.Model):
     guru = models.ForeignKey(Guru, on_delete=models.CASCADE, related_name='jadwal')
